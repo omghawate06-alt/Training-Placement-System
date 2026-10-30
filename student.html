@@ -6,28 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Dashboard</title>
     <link rel="stylesheet" href="style.css">
-
     <style>
         .dashboard {
             max-width: 1000px;
             margin: 30px auto;
             padding: 20px;
         }
-
         .welcome {
-            background: #173b68;
+            background: linear-gradient(135deg, #173b68, #2878c8);
             color: white;
             padding: 25px;
             border-radius: 12px;
         }
-
+        .profile {
+            background: white;
+            padding: 22px;
+            margin-top: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px #0002;
+        }
+        .profile h2 {
+            color: #173b68;
+            margin-top: 0;
+        }
+        .profile p {
+            margin: 12px 0;
+        }
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 15px;
             margin-top: 25px;
         }
-
         .card {
             background: white;
             padding: 22px;
@@ -35,17 +45,15 @@
             box-shadow: 0 2px 10px #0002;
             text-align: center;
         }
-
         .card h3 {
             color: #173b68;
+            font-size: 26px;
         }
-
         .dashboard-links {
             display: grid;
             gap: 12px;
             margin-top: 25px;
         }
-
         .dashboard-links a {
             display: block;
             background: #eaf1fa;
@@ -55,10 +63,12 @@
             text-decoration: none;
             font-weight: bold;
         }
+        .dashboard-links a:hover {
+            background: #d5e5f8;
+        }
     </style>
 </head>
 <body>
-
 <header>
     <h1>Training and Placement Cell</h1>
     <nav>
@@ -66,47 +76,44 @@
         <a href="login.html">Logout</a>
     </nav>
 </header>
-
 <main class="dashboard">
-
     <section class="welcome">
         <h2>Welcome, Student!</h2>
         <p>Manage your placement activities from one place.</p>
     </section>
-
+    <section class="profile">
+        <h2>👤 My Student Profile</h2>
+        <p><strong>Name:</strong> Demo Student</p>
+        <p><strong>Email:</strong> student@example.com</p>
+        <p><strong>Course:</strong> B.Sc. Computer Science</p>
+        <p><strong>CGPA:</strong> 7.50</p>
+    </section>
     <section class="cards">
         <div class="card">
             <h3>05</h3>
             <p>Available Companies</p>
         </div>
-
         <div class="card">
             <h3>03</h3>
             <p>Placement Drives</p>
         </div>
-
         <div class="card">
             <h3>02</h3>
             <p>My Applications</p>
         </div>
-
         <div class="card">
             <h3>7.50</h3>
             <p>My CGPA</p>
         </div>
     </section>
-
     <section class="dashboard-links">
         <h2>Student Services</h2>
-
         <a href="companies.html">🏢 View Companies</a>
         <a href="drives.html">📢 View Placement Drives</a>
         <a href="applications.html">📝 My Applications</a>
         <a href="reports.html">📊 Placement Reports</a>
         <a href="index.html">🏠 Back to Home</a>
     </section>
-
 </main>
-
 </body>
 </html>
