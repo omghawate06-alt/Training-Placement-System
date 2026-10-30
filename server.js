@@ -8,6 +8,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Student authentication routes
+const authRoutes = require("./routes/auth");
+app.use("/api/auth", authRoutes);
+
 // Home API
 app.get("/", (req, res) => {
     res.json({
