@@ -1,91 +1,61 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Admin Dashboard</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f6fb;
-        }
-
-        header {
-            background: #173b70;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .dashboard {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 30px 15px;
-        }
-
-        .card {
-            background: white;
-            padding: 25px;
-            width: 220px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 2px 8px #ccc;
-        }
-
-        .card h2 {
-            color: #173b70;
-        }
-
-        a {
-            color: #173b70;
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-    <h1>Admin Dashboard</h1>
-    <p>Training & Placement Cell Management</p>
-</header>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <p>Training & Placement Cell Management System</p>
+    </header>
 
-<section class="dashboard">
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="companies.html">Companies</a>
+        <a href="drives.html">Placement Drives</a>
+        <a href="reports.html">Reports</a>
+    </nav>
 
-    <div class="card">
-        <h2>Students</h2>
-        <p>Manage student records</p>
-        <a href="#">View Students</a>
-    </div>
+    <main class="container">
 
-    <div class="card">
-        <h2>Companies</h2>
-        <p>Manage registered companies</p>
-        <a href="#">View Companies</a>
-    </div>
+        <h2>Dashboard Overview</h2>
 
-    <div class="card">
-        <h2>Placement Drives</h2>
-        <p>Manage placement opportunities</p>
-        <a href="#">View Drives</a>
-    </div>
+        <div class="card">
+            <h3>Students</h3>
+            <p>Manage registered student information.</p>
+            <a href="register.html" class="btn">View Students</a>
+        </div>
 
-    <div class="card">
-        <h2>Applications</h2>
-        <p>Check student applications</p>
-        <a href="#">View Applications</a>
-    </div>
+        <div class="card">
+            <h3>Companies</h3>
+            <p>View company information.</p>
+            <a href="companies.html" class="btn">View Companies</a>
+        </div>
 
-</section>
+        <div class="card">
+            <h3>Placement Drives</h3>
+            <p>Manage placement opportunities.</p>
+            <a href="drives.html" class="btn">View Drives</a>
+        </div>
 
-<p style="text-align:center;">
-    <a href="index.html">Back to Home</a>
-</p>
+        <div class="card">
+            <h3>Reports</h3>
+            <p>View placement statistics.</p>
+            <a href="reports.html" class="btn">View Reports</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Training & Placement Cell</p>
+    </footer>
 
 </body>
 </html>
