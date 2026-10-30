@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Application</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            max-width: 450px;
+            margin: 30px auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #ccc;
+        }
+
+        h2 {
+            color: #173b70;
+            text-align: center;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #173b70;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Placement Application</h2>
+
+    <form>
+        <input type="text" placeholder="Student Name" required>
+
+        <input type="email" placeholder="Email Address" required>
+
+        <select required>
+            <option value="">Select Company</option>
+            <option>TCS</option>
+            <option>Infosys</option>
+            <option>Wipro</option>
+        </select>
+
+        <input type="text" placeholder="Course" required>
+
+        <input type="number" placeholder="CGPA" step="0.01" min="0" max="10" required>
+
+        <button type="submit">Submit Application</button>
+    </form>
+
+    <p><a href="drives.html">Back to Placement Drives</a></p>
+
+</div>
+
+</body>
+</html>
