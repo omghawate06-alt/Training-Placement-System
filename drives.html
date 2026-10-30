@@ -1,61 +1,104 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Placement Drives</title>
-
     <link rel="stylesheet" href="style.css">
-</head>
 
+    <style>
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .drive-card {
+            background: white;
+            padding: 20px;
+            margin: 18px 0;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px #0002;
+            border-left: 5px solid #173b68;
+        }
+
+        .drive-card h3 {
+            color: #173b68;
+        }
+
+        .drive-card a {
+            display: inline-block;
+            background: #173b68;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .status {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
 <body>
 
-    <header>
-        <h1>Placement Drives</h1>
-        <p>Find your next career opportunity</p>
-    </header>
-
+<header>
+    <h1>Training and Placement Cell</h1>
     <nav>
         <a href="index.html">Home</a>
-        <a href="companies.html">Companies</a>
-        <a href="applications.html">Applications</a>
-        <a href="login.html">Student Login</a>
+        <a href="student.html">Student</a>
+        <a href="admin.html">Admin</a>
     </nav>
+</header>
 
-    <main class="container">
+<main class="container">
 
-        <h2>Available Placement Drives</h2>
+    <h2>Placement Drives</h2>
+    <p>Explore the latest campus placement opportunities.</p>
 
-        <div class="card">
-            <h3>TCS</h3>
-            <p>Role: Software Developer</p>
-            <p>Eligibility: B.Sc CS, BCA, B.Tech</p>
-            <p>Type: Full Time</p>
-            <a href="applications.html" class="btn">Apply Now</a>
-        </div>
+    <div class="drive-card">
+        <h3>TCS Recruitment Drive</h3>
+        <p><strong>Role:</strong> Assistant System Engineer</p>
+        <p><strong>Package:</strong> 3.5 LPA</p>
+        <p><strong>Eligibility:</strong> B.Sc. CS / BCA / BE</p>
+        <p><strong>Minimum CGPA:</strong> 6.0</p>
+        <p class="status">Status: Open</p>
+        <a href="applications.html">Apply Now</a>
+    </div>
 
-        <div class="card">
-            <h3>Infosys</h3>
-            <p>Role: System Engineer</p>
-            <p>Eligibility: B.Sc CS, BCA, B.Tech</p>
-            <p>Type: Full Time</p>
-            <a href="applications.html" class="btn">Apply Now</a>
-        </div>
+    <div class="drive-card">
+        <h3>Infosys Recruitment Drive</h3>
+        <p><strong>Role:</strong> System Engineer</p>
+        <p><strong>Package:</strong> 4 LPA</p>
+        <p><strong>Eligibility:</strong> B.Sc. CS / BCA / BE</p>
+        <p><strong>Minimum CGPA:</strong> 6.5</p>
+        <p class="status">Status: Open</p>
+        <a href="applications.html">Apply Now</a>
+    </div>
 
-        <div class="card">
-            <h3>Wipro</h3>
-            <p>Role: Project Engineer</p>
-            <p>Eligibility: B.Sc CS, BCA, B.Tech</p>
-            <p>Type: Full Time</p>
-            <a href="applications.html" class="btn">Apply Now</a>
-        </div>
+    <div class="drive-card">
+        <h3>Wipro Recruitment Drive</h3>
+        <p><strong>Role:</strong> Project Engineer</p>
+        <p><strong>Package:</strong> 3.5 LPA</p>
+        <p><strong>Eligibility:</strong> B.Sc. CS / BCA / BE</p>
+        <p><strong>Minimum CGPA:</strong> 6.0</p>
+        <p class="status">Status: Open</p>
+        <a href="applications.html">Apply Now</a>
+    </div>
 
-    </main>
+    <div class="drive-card">
+        <h3>Accenture Recruitment Drive</h3>
+        <p><strong>Role:</strong> Associate Software Engineer</p>
+        <p><strong>Package:</strong> 4.5 LPA</p>
+        <p><strong>Eligibility:</strong> B.Sc. CS / BCA / BE</p>
+        <p><strong>Minimum CGPA:</strong> 6.5</p>
+        <p class="status">Status: Open</p>
+        <a href="applications.html">Apply Now</a>
+    </div>
 
-    <footer>
-        <p>© 2026 Training & Placement Cell</p>
-    </footer>
+</main>
 
 </body>
 </html>
