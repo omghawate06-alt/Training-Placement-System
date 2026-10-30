@@ -1,49 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Registration</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-    <h1>Training and Placement Cell</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="login.html">Login</a>
-    </nav>
-</header>
-
-<main>
-    <h2>Student Registration</h2>
-
-    <form id="registerForm">
-        <label>Full Name</label>
-        <input type="text" id="name" required>
-
-        <label>Email</label>
-        <input type="email" id="email" required>
-
-        <label>Course</label>
-        <input type="text" id="course"
-               placeholder="BSc Computer Science" required>
-
-        <label>Password</label>
-        <input type="password" id="password"
-               minlength="6" required>
-
-        <label>CGPA</label>
-        <input type="number" id="cgpa"
-               min="0" max="10" step="0.01">
-
-        <button type="submit">Register</button>
-    </form>
-
-    <p id="message"></p>
-</main>
-
 <script>
 const form = document.getElementById("registerForm");
 
@@ -74,20 +28,24 @@ form.addEventListener("submit", async function(event) {
             }
         );
 
-        const result = await response.json();
+        const raw = await response.text();
+        let result;
 
-        message.textContent = result.message || "Registration completed.";
+        try {
+            result = JSON.parse(raw);
+        } catch {
+            result = { message: raw };
+        }
+
+        message.textContent =
+            result.message || "Server response: " + response.status;
 
         if (response.ok) {
             form.reset();
         }
 
     } catch (error) {
-        message.textContent =
-            "Connection error. Please check your internet or backend.";
+        message.textContent = "Network error: " + error.message;
     }
 });
 </script>
-
-</body>
-</html>
