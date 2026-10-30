@@ -27,13 +27,16 @@
         <input type="email" id="email" required>
 
         <label>Course</label>
-        <input type="text" id="course" placeholder="BSc Computer Science" required>
+        <input type="text" id="course"
+               placeholder="BSc Computer Science" required>
 
         <label>Password</label>
-        <input type="password" id="password" minlength="6" required>
+        <input type="password" id="password"
+               minlength="6" required>
 
         <label>CGPA</label>
-        <input type="number" id="cgpa" min="0" max="10" step="0.01">
+        <input type="number" id="cgpa"
+               min="0" max="10" step="0.01">
 
         <button type="submit">Register</button>
     </form>
@@ -61,7 +64,7 @@ form.addEventListener("submit", async function(event) {
 
     try {
         const response = await fetch(
-            "https://training-placement-system-api.onrender.com/api/auth/register",
+            "https://training-placement-system.onrender.com/api/auth/register",
             {
                 method: "POST",
                 headers: {
@@ -73,14 +76,15 @@ form.addEventListener("submit", async function(event) {
 
         const result = await response.json();
 
-        message.textContent = result.message;
+        message.textContent = result.message || "Registration completed.";
 
         if (response.ok) {
             form.reset();
         }
 
     } catch (error) {
-        message.textContent = "Connection error. Please try again.";
+        message.textContent =
+            "Connection error. Please check your internet or backend.";
     }
 });
 </script>
