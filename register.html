@@ -1,10 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Training and Placement Cell</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Student Registration</h2>
+
+    <form id="registerForm">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your full name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="course">Course</label>
+        <input type="text" id="course" placeholder="BSc Computer Science" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" minlength="6" placeholder="Minimum 6 characters" required>
+
+        <label for="cgpa">CGPA</label>
+        <input type="number" id="cgpa" min="0" max="10" step="0.01" placeholder="Enter your CGPA">
+
+        <button type="submit" id="registerButton">Register</button>
+    </form>
+
+    <p id="message"></p>
+</main>
+
 <script>
 const form = document.getElementById("registerForm");
+const message = document.getElementById("message");
+const button = document.getElementById("registerButton");
 
 form.addEventListener("submit", async function(event) {
     event.preventDefault();
-
-    const message = document.getElementById("message");
 
     const student = {
         name: document.getElementById("name").value.trim(),
@@ -15,6 +59,7 @@ form.addEventListener("submit", async function(event) {
     };
 
     message.textContent = "Registering...";
+    button.disabled = true;
 
     try {
         const response = await fetch(
@@ -28,24 +73,22 @@ form.addEventListener("submit", async function(event) {
             }
         );
 
-        const raw = await response.text();
-        let result;
-
-        try {
-            result = JSON.parse(raw);
-        } catch {
-            result = { message: raw };
-        }
-
-        message.textContent =
-            result.message || "Server response: " + response.status;
+        const result = await response.json();
 
         if (response.ok) {
+            message.textContent = "Success: " + result.message;
             form.reset();
+        } else {
+            message.textContent = "Error: " + (result.message || response.status);
         }
 
     } catch (error) {
-        message.textContent = "Network error: " + error.message;
+        message.textContent = "Connection error: " + error.message;
+    } finally {
+        button.disabled = false;
     }
 });
 </script>
+
+</body>
+</html>
