@@ -1,90 +1,61 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Placement Drives</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6fb;
-            margin: 0;
-        }
-
-        header {
-            background: #173b70;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 700px;
-            margin: 25px auto;
-            padding: 15px;
-        }
-
-        .drive {
-            background: white;
-            padding: 20px;
-            margin-bottom: 18px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px #ccc;
-        }
-
-        h2 {
-            color: #173b70;
-        }
-
-        .apply {
-            display: inline-block;
-            background: #173b70;
-            color: white;
-            padding: 10px 18px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-    <h1>Placement Drives</h1>
-    <p>Explore Career Opportunities</p>
-</header>
+    <header>
+        <h1>Placement Drives</h1>
+        <p>Find your next career opportunity</p>
+    </header>
 
-<div class="container">
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="companies.html">Companies</a>
+        <a href="applications.html">Applications</a>
+        <a href="login.html">Student Login</a>
+    </nav>
 
-    <div class="drive">
-        <h2>TCS Campus Drive</h2>
-        <p>Position: Software Developer</p>
-        <p>Eligibility: B.Sc CS, BCA, B.Tech</p>
-        <p>Location: Pune</p>
-        <a href="applications.html" class="apply">Apply Now</a>
-    </div>
+    <main class="container">
 
-    <div class="drive">
-        <h2>Infosys Campus Drive</h2>
-        <p>Position: System Engineer</p>
-        <p>Eligibility: Graduate Students</p>
-        <p>Location: Bangalore</p>
-        <a href="applications.html" class="apply">Apply Now</a>
-    </div>
+        <h2>Available Placement Drives</h2>
 
-    <div class="drive">
-        <h2>Wipro Campus Drive</h2>
-        <p>Position: Project Engineer</p>
-        <p>Eligibility: Computer Science Students</p>
-        <p>Location: Pune</p>
-        <a href="applications.html" class="apply">Apply Now</a>
-    </div>
+        <div class="card">
+            <h3>TCS</h3>
+            <p>Role: Software Developer</p>
+            <p>Eligibility: B.Sc CS, BCA, B.Tech</p>
+            <p>Type: Full Time</p>
+            <a href="applications.html" class="btn">Apply Now</a>
+        </div>
 
-    <p><a href="index.html">Back to Home</a></p>
+        <div class="card">
+            <h3>Infosys</h3>
+            <p>Role: System Engineer</p>
+            <p>Eligibility: B.Sc CS, BCA, B.Tech</p>
+            <p>Type: Full Time</p>
+            <a href="applications.html" class="btn">Apply Now</a>
+        </div>
 
-</div>
+        <div class="card">
+            <h3>Wipro</h3>
+            <p>Role: Project Engineer</p>
+            <p>Eligibility: B.Sc CS, BCA, B.Tech</p>
+            <p>Type: Full Time</p>
+            <a href="applications.html" class="btn">Apply Now</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Training & Placement Cell</p>
+    </footer>
 
 </body>
 </html>
