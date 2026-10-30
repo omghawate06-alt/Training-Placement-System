@@ -1,57 +1,120 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Companies</title>
-
+    <title>Company Management</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .company-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .company-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px #0002;
+        }
+
+        .company-card h3 {
+            color: #173b68;
+        }
+
+        .company-card p {
+            margin: 10px 0;
+        }
+
+        .company-card a {
+            display: inline-block;
+            background: #173b68;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Our Partner Companies</h1>
-        <p>Explore companies offering career opportunities</p>
-    </header>
-
+<header>
+    <h1>Training and Placement Cell</h1>
     <nav>
         <a href="index.html">Home</a>
         <a href="admin.html">Admin</a>
-        <a href="drives.html">Placement Drives</a>
-        <a href="login.html">Student Login</a>
+        <a href="student.html">Student</a>
     </nav>
+</header>
 
-    <main class="container">
+<main class="container">
 
-        <h2>Available Companies</h2>
+    <h2>Company Management</h2>
+    <p>Explore companies visiting our college for placements.</p>
 
-        <div class="card">
+    <div class="company-grid">
+
+        <div class="company-card">
             <h3>TCS</h3>
-            <p>Industry: Information Technology</p>
-            <p>Opportunities: Software Developer, IT Support</p>
+            <p><strong>Industry:</strong> IT Services</p>
+            <p><strong>Location:</strong> Mumbai</p>
+            <p><strong>Package:</strong> 3.5 LPA</p>
+            <a href="drives.html">View Drives</a>
         </div>
 
-        <div class="card">
+        <div class="company-card">
             <h3>Infosys</h3>
-            <p>Industry: Information Technology</p>
-            <p>Opportunities: System Engineer, Developer</p>
+            <p><strong>Industry:</strong> IT Services</p>
+            <p><strong>Location:</strong> Pune</p>
+            <p><strong>Package:</strong> 4 LPA</p>
+            <a href="drives.html">View Drives</a>
         </div>
 
-        <div class="card">
+        <div class="company-card">
             <h3>Wipro</h3>
-            <p>Industry: Information Technology</p>
-            <p>Opportunities: Project Engineer, Developer</p>
+            <p><strong>Industry:</strong> Technology</p>
+            <p><strong>Location:</strong> Bengaluru</p>
+            <p><strong>Package:</strong> 3.5 LPA</p>
+            <a href="drives.html">View Drives</a>
         </div>
 
-        <a href="index.html" class="btn">Back to Home</a>
+        <div class="company-card">
+            <h3>Accenture</h3>
+            <p><strong>Industry:</strong> Consulting</p>
+            <p><strong>Location:</strong> Pune</p>
+            <p><strong>Package:</strong> 4.5 LPA</p>
+            <a href="drives.html">View Drives</a>
+        </div>
 
-    </main>
+        <div class="company-card">
+            <h3>Capgemini</h3>
+            <p><strong>Industry:</strong> IT Services</p>
+            <p><strong>Location:</strong> Mumbai</p>
+            <p><strong>Package:</strong> 4 LPA</p>
+            <a href="drives.html">View Drives</a>
+        </div>
 
-    <footer>
-        <p>© 2026 Training & Placement Cell</p>
-    </footer>
+        <div class="company-card">
+            <h3>Tech Mahindra</h3>
+            <p><strong>Industry:</strong> IT Services</p>
+            <p><strong>Location:</strong> Pune</p>
+            <p><strong>Package:</strong> 3 LPA</p>
+            <a href="drives.html">View Drives</a>
+        </div>
+
+    </div>
+
+</main>
 
 </body>
 </html>
