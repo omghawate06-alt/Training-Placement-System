@@ -6,14 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Placement Drives</title>
     <link rel="stylesheet" href="style.css">
-
     <style>
         .container {
             max-width: 1000px;
             margin: 30px auto;
             padding: 20px;
         }
-
+        .search-box {
+            width: 100%;
+            padding: 14px;
+            margin: 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
         .drive-card {
             background: white;
             padding: 20px;
@@ -22,11 +29,9 @@
             box-shadow: 0 2px 10px #0002;
             border-left: 5px solid #173b68;
         }
-
         .drive-card h3 {
             color: #173b68;
         }
-
         .drive-card a {
             display: inline-block;
             background: #173b68;
@@ -35,15 +40,18 @@
             border-radius: 6px;
             text-decoration: none;
         }
-
         .status {
             color: green;
             font-weight: bold;
         }
+        #noResults {
+            display: none;
+            text-align: center;
+            color: #666;
+        }
     </style>
 </head>
 <body>
-
 <header>
     <h1>Training and Placement Cell</h1>
     <nav>
@@ -52,53 +60,75 @@
         <a href="admin.html">Admin</a>
     </nav>
 </header>
-
 <main class="container">
-
     <h2>Placement Drives</h2>
     <p>Explore the latest campus placement opportunities.</p>
-
-    <div class="drive-card">
-        <h3>TCS Recruitment Drive</h3>
-        <p><strong>Role:</strong> Assistant System Engineer</p>
-        <p><strong>Package:</strong> 3.5 LPA</p>
-        <p><strong>Eligibility:</strong> B.Sc. CS / BCA / BE</p>
-        <p><strong>Minimum CGPA:</strong> 6.0</p>
-        <p class="status">Status: Open</p>
-        <a href="applications.html">Apply Now</a>
+    <input
+        type="text"
+        id="driveSearch"
+        class="search-box"
+        placeholder="Search by company name..."
+        onkeyup="searchDrives()"
+    >
+    <p id="noResults">No placement drives found.</p>
+    <div id="driveList">
+        <div class="drive-card">
+            <h3>TCS Recruitment Drive</h3>
+            <p><strong>Role:</strong> Assistant System Engineer</p>
+            <p><strong>Package:</strong> 3.5 LPA</p>
+            <p><strong>Eligibility:</strong> B.Sc. CS / BCA / BE</p>
+            <p><strong>Minimum CGPA:</strong> 6.0</p>
+            <p class="status">Status: Open</p>
+            <a href="applications.html">Apply Now</a>
+        </div>
+        <div class="drive-card">
+            <h3>Infosys Recruitment Drive</h3>
+            <p><strong>Role:</strong> System Engineer</p>
+            <p><strong>Package:</strong> 4 LPA</p>
+            <p><strong>Eligibility:</strong> B.Sc. CS / BCA / BE</p>
+            <p><strong>Minimum CGPA:</strong> 6.5</p>
+            <p class="status">Status: Open</p>
+            <a href="applications.html">Apply Now</a>
+        </div>
+        <div class="drive-card">
+            <h3>Wipro Recruitment Drive</h3>
+            <p><strong>Role:</strong> Project Engineer</p>
+            <p><strong>Package:</strong> 3.5 LPA</p>
+            <p><strong>Eligibility:</strong> B.Sc. CS / BCA / BE</p>
+            <p><strong>Minimum CGPA:</strong> 6.0</p>
+            <p class="status">Status: Open</p>
+            <a href="applications.html">Apply Now</a>
+        </div>
+        <div class="drive-card">
+            <h3>Accenture Recruitment Drive</h3>
+            <p><strong>Role:</strong> Associate Software Engineer</p>
+            <p><strong>Package:</strong> 4.5 LPA</p>
+            <p><strong>Eligibility:</strong> B.Sc. CS / BCA / BE</p>
+            <p><strong>Minimum CGPA:</strong> 6.5</p>
+            <p class="status">Status: Open</p>
+            <a href="applications.html">Apply Now</a>
+        </div>
     </div>
-
-    <div class="drive-card">
-        <h3>Infosys Recruitment Drive</h3>
-        <p><strong>Role:</strong> System Engineer</p>
-        <p><strong>Package:</strong> 4 LPA</p>
-        <p><strong>Eligibility:</strong> B.Sc. CS / BCA / BE</p>
-        <p><strong>Minimum CGPA:</strong> 6.5</p>
-        <p class="status">Status: Open</p>
-        <a href="applications.html">Apply Now</a>
-    </div>
-
-    <div class="drive-card">
-        <h3>Wipro Recruitment Drive</h3>
-        <p><strong>Role:</strong> Project Engineer</p>
-        <p><strong>Package:</strong> 3.5 LPA</p>
-        <p><strong>Eligibility:</strong> B.Sc. CS / BCA / BE</p>
-        <p><strong>Minimum CGPA:</strong> 6.0</p>
-        <p class="status">Status: Open</p>
-        <a href="applications.html">Apply Now</a>
-    </div>
-
-    <div class="drive-card">
-        <h3>Accenture Recruitment Drive</h3>
-        <p><strong>Role:</strong> Associate Software Engineer</p>
-        <p><strong>Package:</strong> 4.5 LPA</p>
-        <p><strong>Eligibility:</strong> B.Sc. CS / BCA / BE</p>
-        <p><strong>Minimum CGPA:</strong> 6.5</p>
-        <p class="status">Status: Open</p>
-        <a href="applications.html">Apply Now</a>
-    </div>
-
 </main>
-
+<script>
+    function searchDrives() {
+        const input = document.getElementById("driveSearch")
+            .value.toLowerCase();
+        const cards = document.querySelectorAll(".drive-card");
+        let found = 0;
+        cards.forEach(card => {
+            const company = card.querySelector("h3")
+                .textContent.toLowerCase();
+            if (company.includes(input)) {
+                card.style.display = "block";
+                found++;
+            } else {
+                card.style.display = "none";
+            }
+        });
+        document.getElementById("noResults").style.display =
+            found === 0 ? "block" : "none";
+    }
+</script>
 </body>
 </html>
