@@ -1,46 +1,147 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Training & Placement Cell</title>
+    <title>Training and Placement Cell</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .hero {
+            background: #173b68;
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+        }
+
+        .hero p {
+            font-size: 17px;
+        }
+
+        .hero a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 22px;
+            background: white;
+            color: #173b68;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .feature {
+            background: white;
+            padding: 22px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px #0002;
+            text-align: center;
+        }
+
+        .feature h3 {
+            color: #173b68;
+        }
+
+        .feature a {
+            color: #173b68;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #173b68;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
+
 <body>
-    <header>
-        <h1>Training & Placement Cell</h1>
-        <p>Building Careers, Creating Opportunities</p>
-    </header>
+
+<header>
+    <h1>Training and Placement Cell</h1>
     <nav>
         <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
         <a href="admin.html">Admin</a>
-        <a href="companies.html">Companies</a>
-        <a href="drives.html">Placement Drives</a>
-        <a href="login.html">Student Login</a>
     </nav>
-    <section class="hero">
-        <h2>Welcome to Placement Portal</h2>
-        <p>Your future starts here. Explore training and placement opportunities.</p>
-        <a href="drives.html" class="btn">Explore Opportunities</a>
-    </section>
+</header>
+
+<section class="hero">
+    <h2>Welcome to Training and Placement Cell</h2>
+    <p>Connecting Students with Career Opportunities</p>
+    <a href="register.html">Student Registration</a>
+    <a href="login.html">Student Login</a>
+</section>
+
+<main class="container">
+
+    <h2>Our Services</h2>
+
     <section class="features">
-        <div class="card">
-            <h3>Students</h3>
-            <p>Manage student profiles and placement applications.</p>
-            <a href="register.html" class="btn">Register</a>
+
+        <div class="feature">
+            <h3>👨‍🎓 Student Dashboard</h3>
+            <p>Explore student placement services.</p>
+            <a href="student.html">Open Dashboard</a>
         </div>
-        <div class="card">
-            <h3>Companies</h3>
-            <p>Explore companies and job opportunities.</p>
-            <a href="companies.html" class="btn">View Companies</a>
+
+        <div class="feature">
+            <h3>🏢 Companies</h3>
+            <p>Explore recruiting companies.</p>
+            <a href="companies.html">View Companies</a>
         </div>
-        <div class="card">
-            <h3>Training</h3>
-            <p>Improve skills through training programs.</p>
+
+        <div class="feature">
+            <h3>📢 Placement Drives</h3>
+            <p>Find current placement opportunities.</p>
+            <a href="drives.html">View Drives</a>
         </div>
+
+        <div class="feature">
+            <h3>📝 Applications</h3>
+            <p>Submit your placement application.</p>
+            <a href="applications.html">Apply Now</a>
+        </div>
+
+        <div class="feature">
+            <h3>📊 Placement Reports</h3>
+            <p>View placement statistics.</p>
+            <a href="reports.html">View Reports</a>
+        </div>
+
+        <div class="feature">
+            <h3>⚙️ Admin Dashboard</h3>
+            <p>Manage placement activities.</p>
+            <a href="admin.html">Open Admin</a>
+        </div>
+
     </section>
-    <footer>
-        <p>© 2026 Training & Placement Cell Management System</p>
-    </footer>
+
+</main>
+
+<footer>
+    <p>© 2026 Training and Placement Cell Management System</p>
+    <p>Designed for Academic Project Demonstration</p>
+</footer>
+
 </body>
 </html>
