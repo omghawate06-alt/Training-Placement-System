@@ -1,3 +1,4 @@
+
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -5,10 +6,18 @@ require("dotenv").config();
 
 const app = express();
 
-app.use(cors());
+// Allow GitHub Pages to connect
+app.use(cors({
+    origin: "https://omghawate06-alt.github.io",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
+app.options("*", cors());
+
 app.use(express.json());
 
-// Student authentication routes
+// Authentication routes
 const authRoutes = require("./routes/auth");
 app.use("/api/auth", authRoutes);
 
