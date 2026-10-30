@@ -1,61 +1,113 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Admin Dashboard</title>
-
     <link rel="stylesheet" href="style.css">
-</head>
 
+    <style>
+        .dashboard {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .welcome {
+            background: #173b68;
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px #0002;
+        }
+
+        .card h2 {
+            color: #173b68;
+        }
+
+        .admin-links {
+            display: grid;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .admin-links a {
+            display: block;
+            padding: 16px;
+            background: #eaf1fa;
+            color: #173b68;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+    </style>
+</head>
 <body>
 
-    <header>
-        <h1>Admin Dashboard</h1>
-        <p>Training & Placement Cell Management System</p>
-    </header>
-
+<header>
+    <h1>Training and Placement Cell</h1>
     <nav>
         <a href="index.html">Home</a>
-        <a href="companies.html">Companies</a>
-        <a href="drives.html">Placement Drives</a>
-        <a href="reports.html">Reports</a>
+        <a href="login.html">Logout</a>
     </nav>
+</header>
 
-    <main class="container">
+<main class="dashboard">
 
-        <h2>Dashboard Overview</h2>
+    <section class="welcome">
+        <h2>Welcome, Administrator!</h2>
+        <p>Manage students, companies and placement activities.</p>
+    </section>
 
+    <section class="cards">
         <div class="card">
-            <h3>Students</h3>
-            <p>Manage registered student information.</p>
-            <a href="register.html" class="btn">View Students</a>
+            <h2>120</h2>
+            <p>Total Students</p>
         </div>
 
         <div class="card">
-            <h3>Companies</h3>
-            <p>View company information.</p>
-            <a href="companies.html" class="btn">View Companies</a>
+            <h2>25</h2>
+            <p>Companies</p>
         </div>
 
         <div class="card">
-            <h3>Placement Drives</h3>
-            <p>Manage placement opportunities.</p>
-            <a href="drives.html" class="btn">View Drives</a>
+            <h2>15</h2>
+            <p>Placement Drives</p>
         </div>
 
         <div class="card">
-            <h3>Reports</h3>
-            <p>View placement statistics.</p>
-            <a href="reports.html" class="btn">View Reports</a>
+            <h2>80</h2>
+            <p>Applications</p>
         </div>
+    </section>
 
-    </main>
+    <section class="admin-links">
+        <h2>Admin Services</h2>
 
-    <footer>
-        <p>© 2026 Training & Placement Cell</p>
-    </footer>
+        <a href="student.html">👨‍🎓 Student Dashboard</a>
+        <a href="companies.html">🏢 Manage Companies</a>
+        <a href="drives.html">📢 Manage Placement Drives</a>
+        <a href="applications.html">📝 Manage Applications</a>
+        <a href="reports.html">📊 View Reports</a>
+        <a href="index.html">🏠 Back to Home</a>
+    </section>
+
+</main>
 
 </body>
 </html>
