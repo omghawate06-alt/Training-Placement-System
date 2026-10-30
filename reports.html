@@ -1,60 +1,151 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Placement Reports</title>
-
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 18px;
+            margin: 25px 0;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px #0002;
+        }
+
+        .card h2 {
+            color: #173b68;
+            font-size: 28px;
+        }
+
+        .report-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        .report-table th,
+        .report-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .report-table th {
+            background: #173b68;
+            color: white;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+    </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Placement Reports</h1>
-        <p>Training & Placement Cell Management System</p>
-    </header>
-
+<header>
+    <h1>Training and Placement Cell</h1>
     <nav>
         <a href="index.html">Home</a>
+        <a href="student.html">Student</a>
         <a href="admin.html">Admin</a>
-        <a href="companies.html">Companies</a>
-        <a href="drives.html">Placement Drives</a>
     </nav>
+</header>
 
-    <main class="container">
+<main class="container">
 
-        <h2>Placement Statistics</h2>
+    <h2>Placement Reports</h2>
+    <p>Overview of college placement performance.</p>
 
-        <div class="card">
-            <h3>Total Students</h3>
-            <h2>250</h2>
-        </div>
-
-        <div class="card">
-            <h3>Registered Companies</h3>
-            <h2>15</h2>
-        </div>
+    <section class="cards">
 
         <div class="card">
-            <h3>Students Placed</h3>
             <h2>120</h2>
+            <p>Total Students</p>
         </div>
 
         <div class="card">
-            <h3>Placement Percentage</h3>
-            <h2>48%</h2>
+            <h2>80</h2>
+            <p>Students Placed</p>
         </div>
 
-        <p><a href="admin.html">Back to Dashboard</a></p>
+        <div class="card">
+            <h2>25</h2>
+            <p>Recruiting Companies</p>
+        </div>
 
-    </main>
+        <div class="card">
+            <h2>8 LPA</h2>
+            <p>Highest Package</p>
+        </div>
 
-    <footer>
-        <p>© 2026 Training & Placement Cell</p>
-    </footer>
+    </section>
+
+    <h2>Company-wise Placement Report</h2>
+
+    <div class="table-wrapper">
+        <table class="report-table">
+
+            <tr>
+                <th>Company</th>
+                <th>Students Selected</th>
+                <th>Package</th>
+            </tr>
+
+            <tr>
+                <td>TCS</td>
+                <td>20</td>
+                <td>3.5 LPA</td>
+            </tr>
+
+            <tr>
+                <td>Infosys</td>
+                <td>18</td>
+                <td>4 LPA</td>
+            </tr>
+
+            <tr>
+                <td>Wipro</td>
+                <td>15</td>
+                <td>3.5 LPA</td>
+            </tr>
+
+            <tr>
+                <td>Accenture</td>
+                <td>12</td>
+                <td>4.5 LPA</td>
+            </tr>
+
+            <tr>
+                <td>Capgemini</td>
+                <td>15</td>
+                <td>4 LPA</td>
+            </tr>
+
+        </table>
+    </div>
+
+    <p><small>Note: All figures are sample data for project demonstration.</small></p>
+
+</main>
 
 </body>
 </html>
