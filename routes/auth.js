@@ -1,10 +1,11 @@
+
 const express = require("express");
 const bcrypt = require("bcryptjs");
 const Student = require("../models/Student");
 
 const router = express.Router();
 
-// Student Registration API
+// Student Registration
 router.post("/register", async (req, res) => {
     try {
         const { name, email, course, password, cgpa } = req.body;
@@ -47,8 +48,55 @@ router.post("/register", async (req, res) => {
 
     } catch (error) {
         res.status(500).json({
-            message: "Registration failed.",
-            error: error.message
+            message: "Registration failed."
+        });
+    }
+});
+
+// Student Login
+router.post("/login", async (req, res) => {
+    try {
+        const { email, password } = req.body;
+
+        if (!email || !password) {
+            return res.status(400).json({
+                message: "Please enter email and password."
+            });
+        }
+
+        const student = await Student.findOne({ email });
+
+        if (!student) {
+            return res.status(401).json({
+                message: "Student not found."
+            });
+        }
+
+        const isMatch = await bcrypt.compare(
+            password,
+            student.password
+        );
+
+        if (!isMatch) {
+            return res.status(401).json({
+                message: "Incorrect password."
+            });
+        }
+
+        res.status(200).json({
+            message: "Login successful!",
+            student: {
+                id: student._id,
+                name: student.name,
+                email: student.email,
+                course: student.course,
+                cgpa: student.cgpa
+            }
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            message: "Login failed."
         });
     }
 });
